@@ -1,0 +1,61 @@
+/* --- Desktop / Base Styles --- */
+.section {
+    clear: both;
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+    max-width: 1140px; /* Standard container width */
+    margin: 0 auto;
+    zoom: 1; 
+}
+
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.col {
+    display: block;
+    float: left;
+    margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child {
+    margin-left: 0;
+}
+
+/* --- Grid Widths --- */
+.span-1-of-4 { width: 23.8%; }
+.span-2-of-4 { width: 49.2%; }
+.span-3-of-4 { width: 74.6%; }
+.span-4-of-4 { width: 100%; }
+
+.span-1-of-3 { width: 32.26%; }
+.span-2-of-3 { width: 66.13%; }
+.span-3-of-3 { width: 100%; }
+
+.span-1-of-2 { width: 49.2%; }
+.span-2-of-2 { width: 100%; }
+
+/* --- Mobile Styles (Max 480px) --- */
+/* Grouping everything here makes it much cleaner */
+@media only screen and (max-width: 480px) {
+    .col { 
+        margin: 1% 0; /* Remove side margins on mobile */
+        width: 100% !important; /* Force all columns to stack */
+    }
+    
+    /* Ensure all span types collapse to full width */
+    .span-1-of-4, .span-2-of-4, .span-3-of-4, .span-4-of-4,
+    .span-1-of-3, .span-2-of-3, .span-3-of-3,
+    .span-1-of-2, .span-2-of-2 {
+        width: 100%;
+    }
+}
